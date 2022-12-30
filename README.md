@@ -40,3 +40,6 @@ PaymentModal    -> Payment.Component.jsx
 PlayFilters     -> PlayFilters.Component.jsx
 Poster          -> Poster.Component.jsx
 PosterSlider    -> PosterSlider.Component.jsx
+
+
+react-context-api: Where we can store or update data from any component (i.e., child components) which then can be accessed anywhere in the components.

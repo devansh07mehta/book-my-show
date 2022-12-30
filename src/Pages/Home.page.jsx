@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios';
 
 // Components
 import EntertainmentCardSlider from '../Components/Entertainment/EntertainmentCard.Component';
@@ -12,6 +13,30 @@ const HomePage = () => {
     const [recommendMovies, setrecommendMovies] = useState([]);
     const [premierMovies, setpremierMovies] = useState([]);
     const [onlineStreamEvents, setonlineStreamEvents] = useState([]);
+
+    useEffect(() => {
+        const requestPopularMovies = async () => {
+            const getPopularMovies = await axios.get('/movie/popular');
+            setrecommendMovies(getPopularMovies.data.results);
+        };
+        requestPopularMovies();
+    }, []);
+
+    useEffect(() => {
+        const requestTopRatedMovies = async () => {
+            const getTopRatedMovies = await axios.get('/movie/top_rated');
+            setpremierMovies(getTopRatedMovies.data.results);
+        };
+        requestTopRatedMovies();
+    }, []);
+
+    useEffect(() => {
+        const requestUpcomingMovies = async () => {
+            const getUpcomingMovies = await axios.get('/movie/upcoming');
+            setonlineStreamEvents(getUpcomingMovies.data.results);
+        };
+        requestUpcomingMovies();
+    }, []);
 
     return (
         <>

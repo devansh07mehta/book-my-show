@@ -54,9 +54,9 @@ const HeroCarousel = () => {
             <div className='container lg:hidden'>
                 <HeroSlider {...settings}>
                     {
-                        images.map((images) => {
+                        images.map((images,index) => {
                             return (
-                                <div className="container md:h-80 px-2 py-3 focus:outline-none">
+                                <div className="container md:h-80 px-2 py-3 focus:outline-none" key={index}>
                                     <img src={`https://image.tmdb.org/t/p/original${images.backdrop_path}`} alt="Hero Banner" className="w-full h-full rounded-md object-cover" />
                                 </div>
                             )
@@ -69,9 +69,9 @@ const HeroCarousel = () => {
             <div className='container hidden lg:block'>
                 <HeroSlider {...settings}>
                     {
-                        images.map((images) => {
+                        images.map((images,index) => {
                             return (
-                                <div className="container w-full h-96 px-2 py-3 focus:outline-none">
+                                <div className="container w-full h-96 px-2 py-3 focus:outline-none" key={index}>
                                     <img src={`https://image.tmdb.org/t/p/original${images.backdrop_path}`} alt="Hero Banner" className="w-full h-full rounded-md object-cover" />
                                 </div>
                             )
