@@ -6,6 +6,7 @@ import MovieLayoutHoc from '../Layouts/Movie.layout';
 import Slider from 'react-slick';
 import { FaCcVisa, FaCcApplePay } from 'react-icons/fa'
 import PosterSlider from '../Components/PosterSlider/PosterSlider.Component'
+import MovieHero from '../Components/MovieHero/MovieHero.Component';
 
 const MoviePage = () => {
     const { id } = useParams();
@@ -50,10 +51,43 @@ const MoviePage = () => {
 
     const setingCast = {};
 
-    const settings = {};
+    const settings = {
+        infinite: false,
+        autoplay: false,
+        speed: 500,
+        slidesToShow: 5,
+        slidesToScroll: 4,
+        initialSlide: 0,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 2
+                },
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    initialSlide: 1
+                },
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    initialSlide: 4
+                },
+            },
+        ]
+    };
 
     return <>
         {/* MovieHero */}
+        <MovieHero />
         <div className='my-12 px-4 lg:mx-20 lg:w-2/1'>
             <div className='flex flex-col items-start gap-3'>
                 <h1 className='text-gray-800 font-bold text-2xl'>About the movies</h1>
