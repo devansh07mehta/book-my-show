@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { BiChevronDown, BiMenu, BiSearch } from 'react-icons/bi';
 
 function NavSm() {
@@ -16,7 +16,7 @@ function NavSm() {
             </div>
 
             <div className='w-10 h-10 text-white flex items-center'>
-                <BiMenu className='w-full h-full' />    
+                <BiMenu className='w-full h-full' />
             </div>
 
 
@@ -27,8 +27,8 @@ function NavSm() {
 function NavMd() {
     return <>
         <div className='w-10 h-10 mx-2'>
-            <img src="https://i.ibb.co/zPBYW3H/imgbin-bookmyshow-office-android-ticket-png.png" alt="logo"
-            className='w-full h-full'/>
+            <img src={process.env.PUBLIC_URL + '/img/book-my-show-logo.png'} alt="logo"
+                className='w-full h-full' />
         </div>
         <div className='w-full flex items-center gap-3 bg-white px-3 py-1 rounded-md'>
             <BiSearch />
@@ -45,7 +45,7 @@ function NavLg() {
         <div className='container flex mx-2 items-center gap-3 px-4 justify-between'>
             <div className='flex items-center w-1/2 gap-3'>
                 <div className='w-10 h-10'>
-                    <img src="https://i.ibb.co/zPBYW3H/imgbin-bookmyshow-office-android-ticket-png.png" alt="logo" className='w-full h-full' />
+                    <img src={process.env.PUBLIC_URL + '/img/book-my-show-logo.png'} alt="logo" className='w-full h-full' />
                 </div>
                 <div className='w-full flex items-center gap-3 bg-white px-3 py-1 rounded-md'>
                     <BiSearch />
