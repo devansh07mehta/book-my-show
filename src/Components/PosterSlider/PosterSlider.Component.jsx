@@ -11,25 +11,33 @@ const PosterSlider = (props) => {
         slidesToScroll: 4,
         responsive: [
             {
-                breakpoint: 1024,
+                breakpoint: 1260,
                 settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 2,
+                    slidesToShow: 4,
+                    slidesToScroll: 1,
                 },
             },
             {
-                breakpoint: 600,
+                breakpoint: 1030,
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 1,
-                    initialSlide: 1,
                 },
             },
             {
                 breakpoint: 480,
-                setting: {
+                settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
+                    adaptiveHeight: true
+                }
+            },
+            {
+                breakpoint: 320,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    adaptiveHeight: true
                 },
             },
         ]

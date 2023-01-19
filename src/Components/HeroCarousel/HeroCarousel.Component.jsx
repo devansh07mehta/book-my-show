@@ -20,21 +20,52 @@ const HeroCarousel = () => {
         vote_count: 1426,
     },
     {
-        adult: false,
-        backdrop_path: "/rqgeBNWXas1yrAyXxwi9CahfScx.jpg",
-        genre_ids: [53],
-        id: 985939,
-        original_language: "en",
-        original_title: "Fall",
-        overview:
-            "For best friends Becky and Hunter, life is all about conquering fears and pushing limits. But after they climb 2,000 feet to the top of a remote, abandoned radio tower, they find themselves stranded with no way down. Now Becky and Hunter’s expert climbing skills will be put to the ultimate test as they desperately fight to survive the elements, a lack of supplies, and vertigo-inducing heights.",
-        popularity: 6731.327,
-        poster_path: "/9f5sIJEgvUpFv0ozfA6TurG4j22.jpg",
-        release_date: "2022-08-11",
-        title: "Fall",
-        video: false,
-        vote_average: 7.4,
-        vote_count: 346,
+        "adult": false,
+        "backdrop_path": "/r9PkFnRUIthgBp2JZZzD380MWZy.jpg",
+        "belongs_to_collection": {
+            "id": 94602,
+            "name": "Puss in Boots Collection",
+            "poster_path": "/anHwj9IupRoRZZ98WTBvHpTiE6A.jpg",
+            "backdrop_path": "/feU1DWV5zMWxXUHJyAIk3dHRQ9c.jpg"
+        },
+        "budget": 90000000,
+        "genres": [],
+        "homepage": "https://www.dreamworks.com/movies/puss-in-boots-the-last-wish",
+        "id": 315162,
+        "imdb_id": "tt3915174",
+        "original_language": "en",
+        "original_title": "Puss in Boots: The Last Wish",
+        "overview": "Puss in Boots discovers that his passion for adventure has taken its toll: He has burned through eight of his nine lives, leaving him with only one life left. Puss sets out on an epic journey to find the mythical Last Wish and restore his nine lives.",
+        "popularity": 9694.931,
+        "poster_path": "/kuf6dutpsT0vSVehic3EZIqkOBt.jpg",
+        "production_companies": [],
+        "production_countries": [
+            {
+                "iso_3166_1": "US",
+                "name": "United States of America"
+            }
+        ],
+        "release_date": "2022-12-07",
+        "revenue": 254905780,
+        "runtime": 103,
+        "spoken_languages": [
+            {
+                "english_name": "English",
+                "iso_639_1": "en",
+                "name": "English"
+            },
+            {
+                "english_name": "Spanish",
+                "iso_639_1": "es",
+                "name": "Español"
+            }
+        ],
+        "status": "Released",
+        "tagline": "Say hola to his little friends.",
+        "title": "Puss in Boots: The Last Wish",
+        "video": false,
+        "vote_average": 8.62,
+        "vote_count": 2026
     }]);
 
     const settings = {
@@ -54,7 +85,7 @@ const HeroCarousel = () => {
             <div className='container lg:hidden'>
                 <HeroSlider {...settings}>
                     {
-                        images.map((images,index) => {
+                        images.map((images, index) => {
                             return (
                                 <div className="container md:h-80 px-2 py-3 focus:outline-none" key={index}>
                                     <img src={`https://image.tmdb.org/t/p/original${images.backdrop_path}`} alt="Hero Banner" className="w-full h-full rounded-md object-cover" />
@@ -69,7 +100,7 @@ const HeroCarousel = () => {
             <div className='container hidden lg:block'>
                 <HeroSlider {...settings}>
                     {
-                        images.map((images,index) => {
+                        images.map((images, index) => {
                             return (
                                 <div className="container w-full h-96 px-2 py-3 focus:outline-none" key={index}>
                                     <img src={`https://image.tmdb.org/t/p/original${images.backdrop_path}`} alt="Hero Banner" className="w-full h-full rounded-md object-cover" />

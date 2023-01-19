@@ -5,7 +5,7 @@ const Poster = (props) => {
     return (
         <Link to={`/movie/${props.id}`}>
             <div className='flex flex-col items-start gap-2 px-1 md:px-3'>
-                <div className='h-40 md:h-80'>
+                <div className='md:h-96'>
                     <img src={`https://image.tmdb.org/t/p/original${props.poster_path}`} alt="poster" className='w-full h-full rounded-md' />
                 </div>
 

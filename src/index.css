@@ -2,32 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
-.slick-prev{
-    left: 2% !important;
-    z-index: 1;
-    
+.slick-slide {
+    height: auto;
 }
 
-.slick-next{
+.slick-track {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+}
+
+.slick-prev {
+    left: 2% !important;
+    z-index: 1;
+
+}
+
+.slick-next {
     right: 2% !important;
     z-index: 1;
 }
 
-.slick-prev:before, .slick-next:before{
+.slick-prev:before,
+.slick-next:before {
     color: blue !important;
 }
 
-.container{
+.container {
     max-width: 100%;
 }
 
-.h-96{
-    height: 30rem;
+.h-96 {
+    width: 100% !important;
+    height: 38.6rem !important;
+    object-fit: cover;
 }
 
 @media (min-width: 768px) {
     .md\:h-80 {
-        height: 25rem !important;
+        height: 32rem !important;
     }
 }
 
@@ -37,10 +51,17 @@
         height: 20rem !important;
     }
 }
+
+@media (max-width: 560px) {
+    .md\:h-80 {
+        width: 100% !important;
+        height: 16rem !important;
+    }
+}
+
 @media (max-width: 567px) {
     .md\:h-80 {
         width: 100% !important;
-        height: 100% !important;
         object-fit: cover !important;
     }
 }
