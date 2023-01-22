@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { BiChevronDown, BiMenu, BiSearch, BiShareAlt } from 'react-icons/bi';
 import { MovieContext } from '../../context/Movie.context';
+import { Link } from 'react-router-dom';
 
 const NavSm = () => {
   const { movie } = useContext(MovieContext);
@@ -23,7 +24,9 @@ const NavLg = () => {
     <div className='container flex mx-16 px-4 items-center justify-between'>
       <div className='flex items-center w-1/2 gap-3'>
         <div className='w-10 h-10'>
-          <img src={process.env.PUBLIC_URL + '/img/book-my-show-logo.png'} alt="logo" className='w-full h-full' />
+          <Link to="/book-my-show">
+            <img src={process.env.PUBLIC_URL + '/img/book-my-show-logo.png'} alt="logo" className='w-full h-full' />
+          </Link>
         </div>
 
         <div className='w-full flex items-center gap-3 bg-white px-3 py-1 rounded-md'>

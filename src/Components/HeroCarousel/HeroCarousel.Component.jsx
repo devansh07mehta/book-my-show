@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import HeroSlider from 'react-slick';
+import { NextArrow, PrevArrow } from "./Arrows.Component";
 
 const HeroCarousel = () => {
     const [images, setImages] = useState([{
@@ -72,6 +73,8 @@ const HeroCarousel = () => {
         dots: true,
         slidesToShow: 1,
         slidesToScroll: 1,
+        nextArrow: <NextArrow />,
+        prevArrow: <PrevArrow />,
         infinite: true,
         autoplay: true,
         speed: 2500,

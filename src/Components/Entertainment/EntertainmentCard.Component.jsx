@@ -28,11 +28,11 @@ const EntertainmentCardSlider = () => {
     const settings = {
         infinite: true,
         autoplay: true,
-        speed: 2000,
+        speed: 800,
         autoplaySpeed: 5000,
         cssEase: "linear",
         slidesToShow: 5,
-        slidesToScroll: 5,
+        slidesToScroll: 1,
         initialSlide: 0,
         dots: true,
         responsive: [
@@ -40,7 +40,7 @@ const EntertainmentCardSlider = () => {
                 breakpoint: 1024,
                 settings: {
                     slidesToShow: 3,
-                    slidesToScroll: 3,
+                    slidesToScroll: 1,
                     infinite: true,
                     dots: true
                 }
@@ -49,7 +49,7 @@ const EntertainmentCardSlider = () => {
                 breakpoint: 600,
                 settings: {
                     slidesToShow: 2,
-                    slidesToScroll: 2,
+                    slidesToScroll: 1,
                     initialSlide: 1
                 }
             },

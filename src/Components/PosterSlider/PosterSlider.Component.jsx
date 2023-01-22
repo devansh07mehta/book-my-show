@@ -3,12 +3,12 @@ import Slider from 'react-slick';
 import Poster from '../Poster/Poster.Component';
 
 const PosterSlider = (props) => {
-    const { posters, title, subtitle, isDark, config } = props;
+    const { posters, title, subtitle, isDark } = props;
     const settings = {
         infinite: false,
-        speed: 500,
+        speed: 800,
         slidesToShow: 5,
-        slidesToScroll: 4,
+        slidesToScroll: 1,
         responsive: [
             {
                 breakpoint: 1260,

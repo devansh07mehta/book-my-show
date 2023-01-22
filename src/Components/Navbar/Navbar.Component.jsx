@@ -1,5 +1,6 @@
 import React from 'react';
-import { BiChevronDown, BiMenu, BiSearch } from 'react-icons/bi';
+import { BiMenu, BiSearch, BiChevronDown } from 'react-icons/bi';
+import { Link } from "react-router-dom";
 
 function NavSm() {
     return <>
@@ -45,7 +46,9 @@ function NavLg() {
         <div className='container flex mx-2 items-center gap-3 px-4 justify-between'>
             <div className='flex items-center w-1/2 gap-3'>
                 <div className='w-10 h-10'>
-                    <img src={process.env.PUBLIC_URL + '/img/book-my-show-logo.png'} alt="logo" className='w-full h-full' />
+                    <Link to="/book-my-show">
+                        <img src={process.env.PUBLIC_URL + '/img/book-my-show-logo.png'} alt="logo" className='w-full h-full' />
+                    </Link>
                 </div>
                 <div className='w-full flex items-center gap-3 bg-white px-3 py-1 rounded-md'>
                     <BiSearch />
@@ -53,15 +56,21 @@ function NavLg() {
                 </div>
             </div>
 
-            <div className='flex items-center gap-3'>
-                <span className='text-gray-200 text-base flex items-center cursor-pointer hover:text-white'>
-                    Delhi NCR
+            <div className="flex items-center gap-3">
+                <span className="text-gray-200 text-base flex items-center cursor-pointer hover:text-white">
+                    Delhi NCR <BiChevronDown />
                 </span>
-                <button className='bg-red-600 text-white px-2 py-1 text-sm rounded'>
+                <Link
+                    to="/plays"
+                    className="text-gray-200 text-base flex items-center cursor-pointer hover:text-white"
+                >
+                    Plays
+                </Link>
+                <button className="bg-red-600 text-white px-2 py-1 text-sm rounded">
                     Sign In
                 </button>
-                <div className='w-8 h-8 text-white'>
-                    <BiMenu className='w-full h-full' />
+                <div className="w-8 h-8 text-white">
+                    <BiMenu className="w-full h-full" />
                 </div>
             </div>
         </div>
