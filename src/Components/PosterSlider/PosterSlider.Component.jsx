@@ -5,10 +5,11 @@ import Poster from '../Poster/Poster.Component';
 const PosterSlider = (props) => {
     const { posters, title, subtitle, isDark } = props;
     const settings = {
-        infinite: false,
+        infinite: true,
         speed: 800,
         slidesToShow: 5,
         slidesToScroll: 1,
+        mobileFirst: true,
         responsive: [
             {
                 breakpoint: 1260,
@@ -28,8 +29,7 @@ const PosterSlider = (props) => {
                 breakpoint: 480,
                 settings: {
                     slidesToShow: 2,
-                    slidesToScroll: 1,
-                    adaptiveHeight: true
+                    slidesToScroll: 1
                 }
             },
             {
@@ -37,7 +37,6 @@ const PosterSlider = (props) => {
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    adaptiveHeight: true
                 },
             },
         ]
@@ -53,7 +52,7 @@ const PosterSlider = (props) => {
                 </p>
             </div>
 
-            <Slider {...settings}>
+            <Slider {...settings} className="sm:flex flex-wrap">
                 {
                     posters.map((each, index) => (
                         <Poster {...each} isDark={isDark} key={index} />

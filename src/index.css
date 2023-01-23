@@ -55,7 +55,7 @@
 @media (max-width: 560px) {
     .md\:h-80 {
         width: 100% !important;
-        height: 18.5rem !important;
+        height: 20rem !important;
     }
 }
 

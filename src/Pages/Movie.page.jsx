@@ -51,7 +51,7 @@ const MoviePage = () => {
     }, [id]);
 
     const settingCast = {
-        infinite: false,
+        infinite: true,
         speed: 500,
         slidesToShow: 6,
         slidesToScroll: 4,
@@ -84,7 +84,7 @@ const MoviePage = () => {
 
 
     const settings = {
-        infinite: false,
+        infinite: true,
         autoplay: false,
         speed: 500,
         slidesToShow: 5,
