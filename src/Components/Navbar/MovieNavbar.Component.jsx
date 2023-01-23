@@ -8,6 +8,11 @@ const NavSm = () => {
   return (
     <>
       <div className='text-gray-700 flex items-center justify-between'>
+        <div className='w-10 h-10'>
+          <Link to="/book-my-show">
+            <img src={process.env.PUBLIC_URL + '/img/book-my-show-logo.png'} alt="logo" className='w-full h-full' />
+          </Link>
+        </div>
         <div>
           <h3 className='text-xl font-bold'>{movie.original_title}</h3>
         </div>
