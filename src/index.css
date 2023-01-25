@@ -24,6 +24,30 @@
     z-index: 1;
 }
 
+@media (max-width: 768px){
+    .slick-prev {
+        left: 3% !important;
+        z-index: 1;
+    }
+    
+    .slick-next {
+        right: 4% !important;
+        z-index: 1;
+    }
+}
+
+@media (max-width: 640px){
+    .slick-prev {
+        left: 3% !important;
+        z-index: 1;
+    }
+    
+    .slick-next {
+        right: 3% !important;
+        z-index: 1;
+    }
+}
+
 .slick-prev:before,
 .slick-next:before {
     color: blue !important;
@@ -39,9 +63,16 @@
     object-fit: cover;
 }
 
+.h-36{
+    height: 18rem;
+}
+
 @media (min-width: 768px) {
     .md\:h-80 {
         height: 32rem !important;
+    }
+    .md\:h-79{
+        height: 24rem !important;
     }
 }
 

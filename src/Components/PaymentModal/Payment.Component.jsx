@@ -3,13 +3,15 @@ import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 
 const PaymentModel = ({ setIsOpen, isOpen, price }) => {
+
   const closeModal = () => {
     setIsOpen(false);
   };
 
   const launchRazorPay = () => {
+
     let options = {
-      key: "rzp_test_Fom9DOmbHqxhzy",
+      key: 'rzp_test_Fom9DOmbHqxhzy',
       amount: price * 100,
       currency: "INR",
       name: "Book My Show Clone",
