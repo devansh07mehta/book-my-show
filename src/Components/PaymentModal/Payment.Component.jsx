@@ -1,10 +1,10 @@
 import React from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
+import getStripe from "./GetStripe";
 
-import { Elements } from '@stripe/react-stripe-js';
-import { loadStripe } from '@stripe/stripe-js';
-import CheckoutForm from "./CheckoutForm";
+// import { Elements } from '@stripe/react-stripe-js';
+// import { loadStripe } from '@stripe/stripe-js';
 
 const PaymentModel = ({ setIsOpen, isOpen, price }) => {
 
@@ -15,6 +15,24 @@ const PaymentModel = ({ setIsOpen, isOpen, price }) => {
   // function onButtonClick() {
   //   Instamojo.open('https://www.instamojo.com/@devansh_07/');
   // }
+
+  async function handleCheckout() {
+    const stripe = await getStripe();
+    const { error } = await stripe.redirectToCheckout({
+      lineItems: [
+        {
+          price: 'price_1MUZZQSCmWimpIsumjVBAHr7',
+          quantity: 1,
+        },
+      ],
+      mode: 'subscription',
+      successUrl: `http://localhost:3000/success`,
+      cancelUrl: `http://localhost:3000/cancel`,
+      customerEmail: 'customer@email.com',
+    });
+    console.warn(error.message);
+  }
+
 
   // const launchRazorPay = () => {
 
@@ -37,30 +55,30 @@ const PaymentModel = ({ setIsOpen, isOpen, price }) => {
   //   razorPay.open();
   // };
 
-  const StripePay = () => {
+  // const StripePay = () => {
 
-    const stripePromise = loadStripe(`${process.env.clientKey}`);
-    const options = {
-      // passing the client secret obtained from the server
-      clientSecret: `${process.env.clientSecret}`,
-      currency: "INR",
-      name: "Book My Show Clone",
-      description: "Movie purchase or rental",
-      image:
-        "https://i.ibb.co/zPBYW3H/imgbin-bookmyshow-office-android-ticket-png.png",
-      handler: () => {
-        setIsOpen(false);
-        alert("Payment Successful");
-      },
-      theme: { color: "#c4242d" }
-    };
+  //   const stripePromise = loadStripe(`${process.env.clientKey}`);
+  //   const options = {
+  //     // passing the client secret obtained from the server
+  //     clientSecret: process.env.clientSecret,
+  //     currency: "INR",
+  //     name: "Book My Show Clone",
+  //     description: "Movie purchase or rental",
+  //     image:
+  //       "https://i.ibb.co/zPBYW3H/imgbin-bookmyshow-office-android-ticket-png.png",
+  //     handler: () => {
+  //       setIsOpen(false);
+  //       alert("Payment Successful");
+  //     },
+  //     theme: { color: "#c4242d" }
+  //   };
 
-    return (
-      <Elements stripe={stripePromise} options={options}>
-        <CheckoutForm />
-      </Elements>
-    );
-  }
+  //   return (
+  //     <Elements stripe={stripePromise} options={options}>
+  //       <CheckoutForm />
+  //     </Elements>
+  //   );
+  // }
 
   return (
     <>
@@ -106,7 +124,7 @@ const PaymentModel = ({ setIsOpen, isOpen, price }) => {
                     <button
                       type="button"
                       className="inline-flex justify-center rounded-md border border-transparent bg-red-500 px-4 py-2 text-sm font-medium text-white hover:bg-red-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
-                      onClick={StripePay}
+                      onClick={handleCheckout}
                     >
                       Pay ₹{price}
                     </button>
