@@ -2,17 +2,47 @@ import React from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
+import CheckoutForm from "./CheckoutForm";
+
 const PaymentModel = ({ setIsOpen, isOpen, price }) => {
 
   const closeModal = () => {
     setIsOpen(false);
   };
 
-  const launchRazorPay = () => {
+  // function onButtonClick() {
+  //   Instamojo.open('https://www.instamojo.com/@devansh_07/');
+  // }
 
-    let options = {
-      key: 'rzp_test_Fom9DOmbHqxhzy',
-      amount: price * 100,
+  // const launchRazorPay = () => {
+
+  //   let options = {
+  //     key: 'rzp_test_Fom9DOmbHqxhzy',
+  //     amount: price * 100,
+  //     currency: "INR",
+  //     name: "Book My Show Clone",
+  //     description: "Movie purchase or rental",
+  //     image:
+  //       "https://i.ibb.co/zPBYW3H/imgbin-bookmyshow-office-android-ticket-png.png",
+  //     handler: () => {
+  //       setIsOpen(false);
+  //       alert("Payment Successful");
+  //     },
+  //     theme: { color: "#c4242d" },
+  //   };
+
+  //   let razorPay = window.Razorpay(options);
+  //   razorPay.open();
+  // };
+
+  const StripePay = () => {
+
+    const stripePromise = loadStripe(`${process.env.clientKey}`);
+    const options = {
+      // passing the client secret obtained from the server
+      clientSecret: `${process.env.clientSecret}`,
       currency: "INR",
       name: "Book My Show Clone",
       description: "Movie purchase or rental",
@@ -22,12 +52,15 @@ const PaymentModel = ({ setIsOpen, isOpen, price }) => {
         setIsOpen(false);
         alert("Payment Successful");
       },
-      theme: { color: "#c4242d" },
+      theme: { color: "#c4242d" }
     };
 
-    let razorPay = window.Razorpay(options);
-    razorPay.open();
-  };
+    return (
+      <Elements stripe={stripePromise} options={options}>
+        <CheckoutForm />
+      </Elements>
+    );
+  }
 
   return (
     <>
@@ -73,7 +106,7 @@ const PaymentModel = ({ setIsOpen, isOpen, price }) => {
                     <button
                       type="button"
                       className="inline-flex justify-center rounded-md border border-transparent bg-red-500 px-4 py-2 text-sm font-medium text-white hover:bg-red-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
-                      onClick={launchRazorPay}
+                      onClick={StripePay}
                     >
                       Pay ₹{price}
                     </button>

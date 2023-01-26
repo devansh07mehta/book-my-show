@@ -16,7 +16,7 @@ const MovieProvider = ({ children }) => {
 
     const rentMovie = () => {
         setIsOpen(true);
-        setPrice(149);
+        setPrice(1);
     };
 
     const buyMovie = () => {
