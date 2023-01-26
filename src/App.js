@@ -19,7 +19,7 @@ axios.defaults.params["api_key"] = process.env.REACT_APP_API_KEY;
 
 function App() {
   return <Routes>
-    <Route path='/book-my-show' element={<HomePage />} />
+    <Route path='/' element={<HomePage />} />
     <Route path='/movie/:id' element={<MoviePage />} />
     <Route path='/plays' element={<PlayPage />} />
   </Routes>
