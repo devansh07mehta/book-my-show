@@ -26,8 +26,8 @@ const PaymentModel = ({ setIsOpen, isOpen, price }) => {
         },
       ],
       mode: 'subscription',
-      successUrl: `http://localhost:3000/success`,
-      cancelUrl: `http://localhost:3000/cancel`,
+      successUrl: `https://book-my-show-zkpq.onrender.com/success`,
+      cancelUrl: `https://book-my-show-zkpq.onrender.com/cancel`,
       customerEmail: 'customer@email.com',
     });
     console.warn(error.message);
