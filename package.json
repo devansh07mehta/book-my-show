@@ -1,6 +1,5 @@
 {
   "name": "book-my-show",
-  "homepage": "https://devansh07mehta.github.io/book-my-show",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
