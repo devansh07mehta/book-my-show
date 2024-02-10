@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.slick-slide {
+    height: auto;
+}
+
+.slick-track {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+}
+
+.slick-prev {
+    left: 2% !important;
+    z-index: 1;
+
+}
+
+.slick-next {
+    right: 2% !important;
+    z-index: 1;
+}
+
+@media (max-width: 768px){
+    .slick-prev {
+        left: 3% !important;
+        z-index: 1;
+    }
+    
+    .slick-next {
+        right: 4% !important;
+        z-index: 1;
+    }
+}
+
+@media (max-width: 640px){
+    .slick-prev {
+        left: 3% !important;
+        z-index: 1;
+    }
+    
+    .slick-next {
+        right: 3% !important;
+        z-index: 1;
+    }
+}
+
+.slick-prev:before,
+.slick-next:before {
+    color: blue !important;
+}
+
+.container {
+    max-width: 100%;
+}
+
+.h-96 {
+    width: 100% !important;
+    height: 38.6rem !important;
+    object-fit: cover;
+}
+
+.h-36{
+    height: 18rem;
+}
+
+@media (min-width: 768px) {
+    .md\:h-80 {
+        height: 32rem !important;
+    }
+    .md\:h-79{
+        height: 24rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .md\:h-80 {
+        width: 100% !important;
+        height: 20rem !important;
+    }
+}
+
+@media (max-width: 560px) {
+    .md\:h-80 {
+        width: 100% !important;
+        height: 20rem !important;
+    }
+}
+
+@media (max-width: 567px) {
+    .md\:h-80 {
+        width: 100% !important;
+        object-fit: cover !important;
+    }
+}
